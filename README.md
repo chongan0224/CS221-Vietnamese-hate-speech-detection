@@ -57,7 +57,7 @@ The feature extraction for the model was performed using the Word Embedding meth
 - **Creating a tokenizer and embedding matrix**: A tokenizer object was created to build a dictionary of words appearing in the training set. Irrelevant words, special characters, and unnecessary punctuation were removed. The dictionary was limited to a maximum size of 10,000 words. For each word in the dictionary, a corresponding word embedding vector was placed into the embedding matrix with dimensions **(num_words, embedding_dim)**, where **num_words** is the number of words in the dictionary (plus one special token) and **embedding_dim** is 300. If a word is not found in the vocabulary of the .vec file, its embedding vector will be a zero vector.
 
   ### 3.3. Model
-  ![](https://github.com/tnhi1821/Vietnamese-hate-speech-detection/blob/main/Image%20source/TextCNN.jpg)
+  ![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/TextCNN.jpg)
 
 The model used in this project is Text-CNN. The configuration of the model is as follows:
 - Number of epochs: 40
@@ -68,12 +68,12 @@ The model used in this project is Text-CNN. The configuration of the model is as
 The Text-CNN model includes a 1D Convolution layer with 32 filters and kernel sizes of 2, 3, and 5. The Adam optimizer was used to train the model.
 
 ## 4. Result
-![](https://github.com/tnhi1821/Vietnamese-hate-speech-detection/blob/main/Image%20source/clean.jpg)
-![](https://github.com/tnhi1821/Vietnamese-hate-speech-detection/blob/main/Image%20source/offensive.jpg)
-![](https://github.com/tnhi1821/Vietnamese-hate-speech-detection/blob/main/Image%20source/hate.jpg)
+![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/clean.jpg)
+![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/offensive.jpg)
+![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/hate.jpg)
 
 
-To better understand how the website operates, please watch this [video](https://github.com/tnhi1821/Vietnamese-hate-speech-detection/blob/main/Image%20source/Results.mp4)
+To better understand how the website operates, please watch this [video](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/Results.mp4)
 
 The deep neural network model Text-CNN achieved an accuracy of 86.56% and an F1-macro score of 62.25% on the dataset.
 
