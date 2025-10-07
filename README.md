@@ -57,15 +57,24 @@ The feature extraction for the model was performed using the Word Embedding meth
 - **Creating a tokenizer and embedding matrix**: A tokenizer object was created to build a dictionary of words appearing in the training set. Irrelevant words, special characters, and unnecessary punctuation were removed. The dictionary was limited to a maximum size of 10,000 words. For each word in the dictionary, a corresponding word embedding vector was placed into the embedding matrix with dimensions **(num_words, embedding_dim)**, where **num_words** is the number of words in the dictionary (plus one special token) and **embedding_dim** is 300. If a word is not found in the vocabulary of the .vec file, its embedding vector will be a zero vector.
 
   ### 3.3. Model
-  ![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/TextCNN.jpg)
+  <p align="center">
+    <img src="https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/Transformer_Architecture.png" alt ="Transformer Architecture"> </p>
+  <p align="center">
+    <img src="https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/BERT_Architecture.png" alt ="BER Architecture"> </p>
 
-The model used in this project is Text-CNN. The configuration of the model is as follows:
-- Number of epochs: 40
-- Batch size: 256
-- Sequence length: 100
-- Dropout rate: 0.5
+The model used in this project is BERT. The configuration of the model is as follows:
+- Base model: BERT-based-multilingual-cased
+- Epochs: 4
+- Batch size: 16
+- Max sequence length: 100
+- Optimizer: Adam
+- Munual seed: 4
 
-The Text-CNN model includes a 1D Convolution layer with 32 filters and kernel sizes of 2, 3, and 5. The Adam optimizer was used to train the model.
+Architecture Overview
+- Input layer: Tokenized Vietnamese comments, padded/truncated to 100 tokens.
+- BERT Encoder: Multi-head self-attention layers capture bidirectional context.
+- Dropout Layer: Reduces overfitting by randomly zeroing out some features during training.
+- Dense Layer (Softmax): Outputs class probabilities across 3 categories.
 
 ## 4. Result
 ![](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/clean.jpg)
