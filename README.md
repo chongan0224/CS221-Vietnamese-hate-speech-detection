@@ -49,14 +49,8 @@ The data preprocessing process was carried out through four main steps:
 
 - **Lowercasing**: All words in the text were converted to lowercase to ensure consistency.
 
-### 3.2. Feature extraction
-The feature extraction for the model was performed using the Word Embedding method. Specifically:
 
-- **Word Embedding usage**: The word embedding used in this project is **cc.vi.300.vec**, a pre-trained .vec file generated using the fastText method.
-
-- **Creating a tokenizer and embedding matrix**: A tokenizer object was created to build a dictionary of words appearing in the training set. Irrelevant words, special characters, and unnecessary punctuation were removed. The dictionary was limited to a maximum size of 10,000 words. For each word in the dictionary, a corresponding word embedding vector was placed into the embedding matrix with dimensions **(num_words, embedding_dim)**, where **num_words** is the number of words in the dictionary (plus one special token) and **embedding_dim** is 300. If a word is not found in the vocabulary of the .vec file, its embedding vector will be a zero vector.
-
-  ### 3.3. Model
+  ### 3.2. Model
   <p align="center">
     <img src="https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/Transformer_Architecture.png" alt ="Transformer Architecture"> </p>
   <p align="center">
