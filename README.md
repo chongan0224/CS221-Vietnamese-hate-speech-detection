@@ -78,11 +78,14 @@ Architecture Overview
 
 To better understand how the website operates, please watch this [video](https://github.com/chongan0224/CS221-Vietnamese-hate-speech-detection/blob/main/Vietnamese-hate-speech-detection-main/Vietnamese-hate-speech-detection-main/Image%20source/Results.mp4)
 
-The deep neural network model Text-CNN achieved an accuracy of 86.56% and an F1-macro score of 62.25% on the dataset.
+The BERT-muitilingual cased achieved an accuracy of 86.56% and an F1-macro score of 62.25% on the dataset.
 
-However, the model faces several challenges:
-- **Class Imbalance**: The model tends to predict the CLEAN label due to the significant imbalance in the number of samples between the classes.
-- **Limitations of Word Embeddings**: Using word embeddings from fastText allows the model to learn relationships between words in the dictionary but does not capture full context, leading to misclassification of homophones.
-- **Informal Language**: The dataset contains many comments written in informal language, with abbreviations, slang, and metaphorical expressions, which makes accurate classification challenging for the model.
+However, the BERT-based model still encounters several challenges:
 
-To improve the model's performance, I propose using contextual word embedding models such as BERT or PhoBERT to replace fastText. These models can capture word context more flexibly and accurately, helping to enhance classification accuracy, particularly for homophones and complex cases in informal language.
+  - **Data Imbalance**: The model remains biased toward predicting the CLEAN label due to the large disparity in sample sizes among the three classes.
+
+  - **Complex Informal Language**: Many Vietnamese social media comments include slang, abbreviations, and metaphorical expressions. Even though BERT captures context well, such informal and creative uses of language still pose difficulties for accurate classification.
+
+  - **Limited Domain Adaptation**: The pre-trained multilingual BERT model was not specifically trained on Vietnamese social media text, so it may fail to fully capture cultural nuances and context-specific meanings.
+
+To further enhance model performance, future improvements could include fine-tuning domain-specific language models such as PhoBERT, which is pre-trained on large-scale Vietnamese text data. Additionally, applying data balancing techniques or data augmentation can help mitigate class imbalance and improve robustness in detecting subtle or context-dependent hate speech.
